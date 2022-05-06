@@ -1,0 +1,111 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+.counter {
+    position: relative;
+    background-color: transparent;
+    .disabled-text {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        display: none;
+        width: 100%;
+        text-align: center;
+        color: $c-error;
+        font-size: 12px;
+        line-height: 1;
+    }
+}
+
+.counter-input {
+    background-color: #fafafa;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    border-radius: 50px;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    @media (max-width: $md - 1) {
+        max-width: 34px;
+        height: 34px;
+    }
+    &:focus {
+        border: 1px solid $c-primary-hover;
+    }
+}
+
+.counter-btn {
+    width: 40px;
+    height: 40px;
+    background-size: 16px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    @media (max-width: $md - 1) {
+        width: 34px;
+        height: 34px;
+    }
+    &:before,
+    &:after {
+        position: absolute;
+        top: calc(50% - 1px);
+        left: calc(50% - 5px);
+        display: block;
+        width: 12px;
+        height: 2px;
+        content: '';
+        background: #C4C4C4;
+    }
+    &:before {
+        transform: rotate(-90deg);
+    }
+    &[disabled],
+    &.disabled {
+        cursor: default;
+        &:before,
+        &:after {
+            background: $c-gray;
+        }
+    }
+}
+
+.counter-minus {
+    left: 0;
+    &:before {
+        display: none;
+    }
+}
+
+.counter-plus {
+    right: 0;
+    &[disabled],
+    &.disabled {
+        &~.disabled-text {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 1199px) {
+    .fixed-card-body-wrap .disabled-text {
+        bottom: 89%;
+        width: 183px;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: $xl) {
+    .counter-btn {
+        &:hover {
+            &:before,
+            &:after {
+                background: $c-primary;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+mixin swiper(args= {})
+
+	//-ПРИМЕР
+		+swiper({
+			wrapper_mod: '',
+			container_mod: '',
+			pagination_mod: '',
+			arrow_prev_mod: '',
+			arrow_next_mod: '',
+			pagination: true,
+			navigation: true,
+		}).CLASS.js-CLASS
+			//- Слайды
+			.swiper-slide
+	//-+include-style('swiper')//??
+	//-+include-script('swiper')//??
+	//- +include-script-vendor('swiper.min.js')
+	.swiper&attributes(attributes)
+		.swiper-container.js-swiper-slider(class= args.container_mod)
+			.swiper-wrapper(class= args.wrapper_mod)
+				block
+		if (args.navigation)
+			button.swiper-button-prev.js-swiper-button-prev(class=args.arrow_prev_mod type='button' aria-label='Предыдущий слайд')
+				+icon('i-prev_arrow')(style="width: 50px; height: 50px")
+			button.swiper-button-next.js-swiper-button-next(class=args.arrow_next_mod type='button' aria-label='Следующий слайд')
+				+icon('i-next_arrow')(style="width: 50px; height: 50px")
+		if (args.pagination)
+			.swiper-pagination.js-swiper-pagination(class= args.pagination_mod)
+		if (args.scrollBar)
+			.swiper-scrollbar.js-swiper-scrollbar

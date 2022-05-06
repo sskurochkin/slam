@@ -1,0 +1,72 @@
+mixin product-card(args={})
+	+include-script('mixin__product-card')
+	+include-style('mixin__product-card')
+	.card(class=args.mod)
+			.card__header
+				.card__stock.stock
+					if (args.action)
+						+product-label({
+							mod: '',
+							content: `Акция ${args.discount}`
+						})
+					if (args.new)
+						+product-label({
+							mod: 'stock__discount--new',
+							content: 'Новинка'
+						})
+					if (args.recommend)
+						+product-label({
+							mod: 'stock__discount--rec',
+							content: 'Рекомендуем'
+						})
+				img(src='https://picsum.photos/200' alt="").card__pic
+				span.card__fav(class=args.favourites ? 'active' : '')
+						+icon('i-heart-card-3')(style="width:22px; height:22px")
+			.card__info
+				//- a(href="#").product-card__image
+				//- 	if (args.slider)
+				//- 		+lazy-img-slider({
+				//- 			img: args.img,
+				//- 			placeholder: pixel
+				//- 		})
+				//- 	else
+				//- 		+lazy-img({
+				//- 			img: args.img,
+				//- 			placeholder: pixel
+				//- 		})
+				if (args.availability == 'available')
+					+product-status({
+						mod: '',
+						content: 'В наличии'
+					})
+				if (args.availability == 'false')
+					+product-status({
+						mod: '',
+						content: 'Товара нет'
+					})
+				if (args.availability == 'unavailable')
+					+product-status({
+						mod: '',
+						content: 'Отсутствует'
+					})
+				p.vendor Код:&nbsp;
+					span.vendor-code= args.vendor || 3434343434	
+			
+			.card__desc= args.title
+			.card__order 
+				span.card__price= Math.floor(Math.random() * (200) + 200) + ' р' 
+				span.card__price.card__price--discount 600.20 р
+				if (args.availability == 'available')
+					span.card__cart 
+						span.cart__count 2
+						+icon('i-cart')(style="width:32px; height:32px")
+							
+			if(args.availability == 'available')
+				.card__count
+					.card__count-input 
+						+counter({
+							value: 200
+						})
+					.card__buttons
+						.card__btn.btn.btn--outline Купить в 1 клик
+						.card__btn.btn В корзину

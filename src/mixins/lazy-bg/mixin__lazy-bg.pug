@@ -1,0 +1,17 @@
+mixin lazy-bg(args= {})
+	//-
+			+lazy-bg({
+				img: IMGSRC,
+				img_mod: IMGCLASS,
+				wrap_mod: WRAPCLASS,
+				link: false,
+				aria_label: false,
+			})
+	if (args.link)
+		a.lazy-img-wrap(class=args.wrap_mod href='#')
+			span.lazy-img(data-bg="url("+ SITE_TEMPLATE_PATH + args.img + "), linear-gradient(transparent, transparent)" class=args.img_mod)&attributes(attributes)
+			block
+	else
+		.lazy-img-wrap(class=args.wrap_mod)
+			span.lazy-img(data-bg="url(" + SITE_TEMPLATE_PATH + args.img + "), linear-gradient(transparent, transparent)" class=args.img_mod)&attributes(attributes)
+			block

@@ -1,0 +1,72 @@
+mixin swiper-with-nav(args= {})
+	//-ПРИМЕР
+		+swiper-with-nav({
+			main: {
+				wrapper_mod: '',
+				container_mod: '',
+				pagination_mod: '',
+				arrow_prev_mod: '',
+				arrow_next_mod: '',
+				pagination: true,
+				navigation: true,
+			},
+			nav: {
+				wrapper_mod: '',
+				container_mod: '',
+				pagination_mod: '',
+				arrow_prev_mod: '',
+				arrow_next_mod: '',
+				pagination: true,
+				navigation: true,
+				list: [
+					{
+						img: 'images/https://source.unsplash.com/random/50x50',
+						img_placeholder: 'https://source.unsplash.com/random/50x50',
+					},{
+						img: 'images/https://source.unsplash.com/random/50x50',
+						img_placeholder: 'https://source.unsplash.com/random/50x50',
+					},{
+						img: 'images/https://source.unsplash.com/random/50x50',
+						img_placeholder: 'https://source.unsplash.com/random/50x50',
+					},{
+						img: 'images/https://source.unsplash.com/random/50x50',
+						img_placeholder: 'https://source.unsplash.com/random/50x50',
+					},{
+						img: 'images/https://source.unsplash.com/random/50x50',
+						img_placeholder: 'https://source.unsplash.com/random/50x50',
+					},
+				],
+				img_mod: 'swiper-thumbnail-img',
+				wrap_mod: 'swiper-thumbnail'
+			},
+		}).CLASS.js-CLASS
+			//- Слайды главного слайда
+			.swiper-slide
+	.swiper-with-nav&attributes(attributes)
+		+swiper({
+			wrapper_mod:	args.main.wrapper_mod,
+			container_mod:	args.main.container_mod,
+			pagination_mod:	args.main.pagination_mod,
+			arrow_prev_mod:	args.main.arrow_prev_mod,
+			arrow_next_mod:	args.main.arrow_next_mod,
+			pagination:		args.main.pagination,
+			navigation:		args.main.navigation,
+		}).swiper-main.js-swiper-main
+			block
+		+swiper({
+			wrapper_mod:	args.nav.wrapper_mod,
+			container_mod:	args.nav.container_mod,
+			pagination_mod:	args.nav.pagination_mod,
+			arrow_prev_mod:	args.nav.arrow_prev_mod,
+			arrow_next_mod:	args.nav.arrow_next_mod,
+			pagination:		args.nav.pagination,
+			navigation:		args.nav.navigation,
+		}).swiper-nav.js-swiper-nav
+			each item in args.nav.list
+				+lazy-img-slider({
+					img: item.img,
+					placeholder:	item.img_placeholder,
+					img_mod:		args.nav.img_mod,
+					wrap_mod:		args.nav.wrap_mod,
+					http:		args.nav.http
+				}).swiper-slide

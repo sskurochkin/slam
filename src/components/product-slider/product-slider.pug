@@ -1,0 +1,174 @@
++include-style('product-slider')
++include-script('product-slider')
+
+- var products = []
+- for(let a = 1; a<=10; a++){
+	-products.push(a)
+- }
+- console.log(products)
+
+section.product-slider-section
+	.promo
+		.container
+			h2.promo__title Promo block
+			.product-slider-section__inner
+				+swiper({
+					container_mod: 'product-slider__container',
+					wrapper_mod: '',
+					navigation: true,
+					pagination: true,
+				}).product-slider.js-slider-product
+					each product in products
+						.product-card-wrap
+							+product-card({
+								discount: '-12%',
+								img:'/images/product-1.png',
+								new: product %2 == 0,
+								hit: true,
+								action: true,
+								recommend: true,
+								favourites: product %3 == 2,
+								availability: product %3 == 1?'available':'unavailable',
+								title: 'Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F Смартфон Samsung Galaxy A32 4Gb/128Gb Violet '
+							})
+					//- .product-card-wrap
+					//- 	+product-card({
+					//- 		discount: '-12%',
+					//- 		img:'/images/product-2.png',
+					//- 		new: true,
+					//- 		hit: true,
+					//- 		action: true,
+					//- 		recommend: true,
+					//- 		slider: true,
+					//- 		availability: 'false',
+					//- 		title: 'Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F Смартфон Samsung Galaxy A32 4Gb/128Gb Violet '
+					//- 	})
+					//- .product-card-wrap
+					//- 	+product-card({
+					//- 		discount: '-12%',
+					//- 		img:'/images/product-3.png',
+					//- 		new: true,
+					//- 		hit: true,
+					//- 		action: true,
+					//- 		recommend: true,
+					//- 		slider: true,
+					//- 		availability: 'available',
+					//- 		title: 'Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F Смартфон Samsung Galaxy A32 4Gb/128Gb Violet '
+					//- 	})
+					//- .product-card-wrap
+					//- 	+product-card({
+					//- 		mod: 'product-card--unavailable',
+					//- 		discount: '-12%',
+					//- 		img:'/images/product-4.png',
+					//- 		new: true,
+					//- 		hit: true,
+					//- 		action: true,
+					//- 		recommend: true,
+					//- 		slider: true,
+					//- 		availability: 'unavailable',
+					//- 		title: 'Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F Смартфон Samsung Galaxy A32 4Gb/128Gb Violet '
+					//- 	})
+					//- .product-card-wrap
+					//- 	+product-card({
+					//- 		mod: 'product-card--unavailable',
+					//- 		discount: '-12%',
+					//- 		img:'/images/product-2.png',
+					//- 		new: true,
+					//- 		hit: true,
+					//- 		action: true,
+					//- 		recommend: true,
+					//- 		slider: true,
+					//- 		availability: 'false',
+					//- 		title: 'Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F Смартфон Samsung Galaxy A32 4Gb/128Gb Violet '
+					//- 	})
+					//- .product-card-wrap
+					//- 	+product-card({
+					//- 		mod: 'product-card--unavailable',
+					//- 		discount: '-12%',
+					//- 		img:'/images/product-2.png',
+					//- 		new: true,
+					//- 		hit: true,
+					//- 		action: true,
+					//- 		recommend: true,
+					//- 		slider: true,
+					//- 		availability: 'false',
+					//- 		title: 'Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F Смартфон Samsung Galaxy A32 4Gb/128Gb Violet '
+					//- 	})
+					//- .product-card-wrap
+					//- 	+product-card({
+					//- 		mod: 'product-card--unavailable',
+					//- 		discount: '-12%',
+					//- 		img:'/images/product-1.png',
+					//- 		new: true,
+					//- 		hit: true,
+					//- 		action: true,
+					//- 		recommend: true,
+					//- 		slider: true,
+					//- 		availability: 'false',
+					//- 		title: 'Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F Смартфон Samsung Galaxy A32 4Gb/128Gb Violet '
+					//- 	})
+					//- .product-card-wrap
+					//- 	+product-card({
+					//- 		mod: 'product-card--unavailable',
+					//- 		discount: '-12%',
+					//- 		img:'/images/product-1.png',
+					//- 		new: true,
+					//- 		hit: true,
+					//- 		action: true,
+					//- 		recommend: true,
+					//- 		slider: true,
+					//- 		availability: 'false',
+					//- 		title: 'Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F Смартфон Samsung Galaxy A32 4Gb/128Gb Violet '
+					//- 	})
+					//- .product-card-wrap
+					//- 	+product-card({
+					//- 		mod: 'product-card--unavailable',
+					//- 		discount: '-12%',
+					//- 		img:'/images/product-1.png',
+					//- 		new: true,
+					//- 		hit: true,
+					//- 		action: true,
+					//- 		recommend: true,
+					//- 		slider: true,
+					//- 		availability: 'false',
+					//- 		title: 'Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F Смартфон Samsung Galaxy A32 4Gb/128Gb Violet '
+					//- 	})
+					//- .product-card-wrap
+					//- 	+product-card({
+					//- 		mod: 'product-card--unavailable',
+					//- 		discount: '-12%',
+					//- 		img:'/images/product-1.png',
+					//- 		new: true,
+					//- 		hit: true,
+					//- 		action: true,
+					//- 		recommend: true,
+					//- 		slider: true,
+					//- 		availability: 'false',
+					//- 		title: 'Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F Смартфон Samsung Galaxy A32 4Gb/128Gb Violet '
+					//- 	})
+					//- .product-card-wrap
+					//- 	+product-card({
+					//- 		mod: 'product-card--unavailable',
+					//- 		discount: '-12%',
+					//- 		img:'/images/product-1.png',
+					//- 		new: true,
+					//- 		hit: true,
+					//- 		action: true,
+					//- 		recommend: true,
+					//- 		slider: true,
+					//- 		availability: 'false',
+					//- 		title: 'Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F Смартфон Samsung Galaxy A32 4Gb/128Gb Violet '
+					//- 	})
+					//- .product-card-wrap
+					//- 	+product-card({
+					//- 		mod: 'product-card--unavailable',
+					//- 		discount: '-12%',
+					//- 		img:'/images/product-1.png',
+					//- 		new: true,
+					//- 		hit: true,
+					//- 		action: true,
+					//- 		recommend: true,
+					//- 		slider: true,
+					//- 		availability: 'false',
+					//- 		title: 'Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F Смартфон Samsung Galaxy A32 4Gb/128Gb Violet '
+					//- 	})

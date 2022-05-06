@@ -1,0 +1,58 @@
++include-style('header')
++include-script('header')
+
+header.header 
+	.container 
+		nav.menu 
+			.menu__btn 
+				span 
+				span 
+				span 
+			ul.menu__list 
+				li 
+					a(href='#').menu__link О компании
+				li 
+					a(href='#').menu__link Потребителям
+				li 
+					a(href='#').menu__link Магазины
+				li 
+					a(href='#').menu__link Контакты
+			ul.menu__list 
+				li 
+					a(href="mailto:info@info.com").menu__link
+						+icon('i-mail')(style='width:16px; height:16px')
+						span info@info.com
+				li 
+					a(href="tel:+375296461616").menu__link
+						+icon('i-a1')(style='width:16px; height:16px')
+						+icon('i-mts')(style='width:16px; height:16px')
+						span +375 (29) 646-16-16
+				li 
+					a(href="#").menu__link.menu__link--underline Обратный звонок
+					
+				li 
+					a(href="#").menu__link.menu__link--underline Войти
+		.header__content 
+			a(href='#').header__logo.logo
+				img(src='/local/templates/html/images/logo.svg' alt="")
+			.header__quote 
+				p Разработка как спорт.
+				p Важен только результат.
+			.header__input 
+				span 
+					+icon('i-search')(style='width:32px; height:32px') 
+				span
+					+icon('i-close')(style='width:24px; height:24px') 
+				
+				input(type="text" name="text" id="text" placeholder="Введите текст для поиска").header__search
+			.header__fav 
+				+icon('i-heart')(style='width:32px; height:32px') 
+				span Избранное
+
+			.header__cart 
+				.header__cart-icon 
+					+icon('i-cart')(style='width:32px; height:32px')
+					span.cart__count 3
+				span.header__price 233322		
+
+				

@@ -1,0 +1,608 @@
++include-style('product-page')
++include-script('product-page')
++include-style('mixin__product-card')
+.product-page
+	.container
+		.product-page__inner
+			.product-page__grid
+				.product-page__area.product-page__first
+					.product-page__left
+						.product-page__flex
+							.product-page__image
+								.product-image
+									.product-image__nav.product-image__nav-labels
+										+swiper({
+											container_mod: '',
+												wrapper_mod: '',
+												navigation: true,
+												pagination: true,
+											}).js-slider-product-page-nav
+												.swiper-slide
+													+lazy-img-slider({
+														img: '/images/product-page-product.png',
+														placeholder: pixel
+													})
+												.swiper-slide
+													+lazy-img-slider({
+														img: '/images/product-page-product.png',
+														placeholder: pixel
+													})
+												.swiper-slide
+													+lazy-img-slider({
+														img: '/images/product-page-product.png',
+														placeholder: pixel
+													})
+												.swiper-slide
+													+lazy-img-slider({
+														img: '/images/product-page-product.png',
+														placeholder: pixel
+													})
+												.swiper-slide
+													+lazy-img-slider({
+														img: '/images/product-page-product.png',
+														placeholder: pixel
+													})
+									.product-image__main
+										.product-image__labels
+											+product-label({
+												mod: 'product-card__discount',
+												content: '-12%'
+											})
+											+product-label({
+												mod: 'product-card__label--blue',
+												content: 'Новинка'
+											})
+											+product-label({
+												mod: 'product-card__label--green',
+												content: 'Хит'
+											})
+											+product-label({
+												mod: 'product-card__label--orange',
+												content: 'Акция'
+											})
+											+product-label({
+												mod: 'product-card__label--pink',
+												content: 'Рекомендуем'
+											})
+										+swiper({
+											container_mod: '',
+												wrapper_mod: '',
+												navigation: false,
+												pagination: true,
+											}).js-slider-product-page
+												.swiper-slide
+													+lazy-img-slider({
+														img: '/images/product-page-product.png',
+														link: true,
+														placeholder: pixel
+													})
+												.swiper-slide
+													+lazy-img-slider({
+														img: 'https://picsum.photos/1200/500',
+														http: true,
+														link: true,
+														placeholder: pixel
+													})
+												.swiper-slide
+													+lazy-img-slider({
+														img: 'https://picsum.photos/500/1200',
+														http: true,
+														link: true,
+														placeholder: pixel
+													})
+												.swiper-slide
+													+lazy-img-slider({
+														img: 'https://picsum.photos/500/1200',
+														http: true,
+														link: true,
+														placeholder: pixel
+													})
+												.swiper-slide
+													+lazy-img-slider({
+														img: 'https://picsum.photos/500/1200',
+														http: true,
+														link: true,
+														placeholder: pixel
+													})
+							.product-page__descr.product-page__descr--desctop
+								.product-descr
+									.product-descr__code Артикул:14515.4
+									.product-descr__category Категория: Смартфоны
+									.product-descr__row
+										.product-descr__rate
+											.product-descr__star.active
+												+icon('i-star')(style="width: 12px; height:12px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 12px; height:12px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 12px; height:12px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 12px; height:12px")
+											.product-descr__star
+												+icon('i-star')(style="width: 12px; height:12px")
+											.product-descr__rate-total 4,2
+										a(href="#").product-descr__feedback(data-tab-index='4' data-scroll="true") Отзывов 58
+									.product-descr__table
+										.product-descr__table-title Общие характеристики
+										.product-features
+											.product-features__item 
+												.product-features__prop Тип
+												span.product-features__sep
+												.product-features__val Смартфон
+											.product-features__item 
+												.product-features__prop Тип SIM-карты
+												span.product-features__sep
+												.product-features__val naon Sim
+											.product-features__item 
+												.product-features__prop Объём оперативной памяти
+												span.product-features__sep
+												.product-features__val 4096 Мб
+											.product-features__item 
+												.product-features__prop Операционная система 
+												span.product-features__sep
+												.product-features__val Смартфон
+											.product-features__item 
+												.product-features__prop Тип
+												span.product-features__sep
+												.product-features__val Смартфон
+											.product-features__item 
+												.product-features__prop Тип
+												span.product-features__sep
+												.product-features__val Смартфон
+											.product-features__item 
+												.product-features__prop Тип
+												span.product-features__sep
+												.product-features__val Смартфон
+											.product-features__more(data-tab-index='2' data-scroll="true") Смотреть все характеристики
+				.product-page__area.product-page__third
+					.product-page__tabs
+						.product-page__tab(data-tab-index='1').active Описание
+						.product-page__tab(data-tab-index='2') Характеристики
+						.product-page__tab(data-tab-index='3') Видео
+						.product-page__tab(data-tab-index='4') Отзывы
+						.product-page__tab(data-tab-index='5') Документы
+					.product-page__tab-content(data-tab-content='1').active
+						.product-page__media-toggler.js-toggler
+							span Описание
+							+icon('i-arrow-small')(style="width:12px; height: 12px")
+						.product-page__media-content
+							.product-page__description
+								p Самсунг Электроникс Компани, ЛТД. Мэтан-донг 129, Самсунг-ро, Енгтонг-гу, Сувон, Кенги-до, 443-742, Республика Корея. Товар подлежит обязательной сертификации или декларированию соответствия.
+							.product-page__row
+								.product-page__col
+									.product-description-card
+										.product-description-card__img
+											+lazy-img({
+												img: '/images/product-description.png'
+											})
+										.product-description-card__title Производитель
+										.product-description-card__content Роберт Бош Хаусгерете ГмбХ, Карл-Вери-Штрассе 34, 81739 Мюнхен, Германи
+								.product-page__col
+									.product-description-card
+										.product-description-card__img
+										.product-description-card__title Изготовитель
+										.product-description-card__content Роберт Бош Хаусгерете ГмбХ, Карл-Вери-Штрассе 34, 81739 Мюнхен, Германи
+								.product-page__col
+									.product-description-card
+										.product-description-card__img
+										.product-description-card__title Поставщик
+										.product-description-card__content ООО «Олимп СМ», 220113, г. Минск, ул. Мележа, 1, пом. 901, комн. 02
+					.product-page__tab-content(data-tab-content='2')
+						.product-page__media-toggler.js-toggler
+							span Характеристики
+							+icon('i-arrow-small')(style="width:12px; height: 12px")
+						.product-page__media-content
+							.product-descr__table
+								.product-descr__table-title Общие характеристики
+								.product-features
+									.product-features__item 
+										.product-features__prop
+											span Тип
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop
+											span Тип SIM-карты
+										span.product-features__sep
+										.product-features__val naon Sim
+									.product-features__item 
+										.product-features__prop
+											span Объём оперативной памяти
+										span.product-features__sep
+										.product-features__val 4096 Мб
+									.product-features__item 
+										.product-features__prop
+											span Операционная система 
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop
+											span Тип
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop
+											span Тип
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop 
+											span Тип
+										span.product-features__sep
+										.product-features__val ООО «Олимп СМ», 220113, г. Минск, ул. Мележа, 1, пом. 901, комн. 02
+							.product-descr__table
+								.product-descr__table-title Общие характеристики
+								.product-features
+									.product-features__item 
+										.product-features__prop
+											span Тип
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop
+											span Тип SIM-карты
+										span.product-features__sep
+										.product-features__val naon Sim
+									.product-features__item 
+										.product-features__prop
+											span Объём оперативной памяти
+										span.product-features__sep
+										.product-features__val 4096 Мб
+									.product-features__item 
+										.product-features__prop
+											span Операционная система 
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop
+											span Тип
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop
+											span Тип
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop 
+											span Тип
+										span.product-features__sep
+										.product-features__val ООО «Олимп СМ», 220113, г. Минск, ул. Мележа, 1, пом. 901, комн. 02
+							.product-descr__table
+								.product-descr__table-title Общие характеристики
+								.product-features
+									.product-features__item 
+										.product-features__prop
+											span Тип
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop
+											span Тип SIM-карты
+										span.product-features__sep
+										.product-features__val naon Sim
+									.product-features__item 
+										.product-features__prop
+											span Объём оперативной памяти
+										span.product-features__sep
+										.product-features__val 4096 Мб
+									.product-features__item 
+										.product-features__prop
+											span Операционная система 
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop
+											span Тип
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop
+											span Тип
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop 
+											span Тип
+										span.product-features__sep
+										.product-features__val ООО «Олимп СМ», 220113, г. Минск, ул. Мележа, 1, пом. 901, комн. 02
+					.product-page__tab-content(data-tab-content='3')
+						.product-page__media-toggler.js-toggler
+							span Видео
+							+icon('i-arrow-small')(style="width:12px; height: 12px")
+						.product-page__media-content
+							+lazy-video()
+					.product-page__tab-content(data-tab-content='4')
+						.product-page__media-toggler.js-toggler
+							span Отзывы
+							+icon('i-arrow-small')(style="width:12px; height: 12px")
+						.product-page__media-content
+							.reviews
+								.reviews__header
+									.reviews__title Все отзывы
+									.reviews__modal(data-target="#modal-review" data-toggle="modal") Оставить отзыв
+								.reviews__item 
+									.review
+										.review__header
+											.review__author Анастасия Клименок
+											.review__date 09.04.2020
+										.review__rate
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star
+												+icon('i-star')(style="width: 16px; height:16px")
+										.review__content Ребёнок очень доволен!!! Поиском кроссовок занимались около двух недель- у сына маленькая особенность: 46 размер ноги, для нас выбор обуви целая проблема, но Спортмастер нас выручил. Во первых выбор огромен, даже 46 размер кроссовок не проблема для этого замечательного магазина спортивных товаров! Определился сын очень быстро, надел эти кроссовки и не захотел снимать! Кроссовки «дышат», удобные, стильные - каждый день они шагают по дорогам Челябинска.
+										.review__summary
+											.review__plus
+												.review__plus-title Достоинства
+												.review__summary-content Удобные, красивые и прочные.
+											.review__minus 
+												.review__minus-title Недостатки
+												.review__summary-content Удобные, красивые и прочные.
+									.reply
+										.reply__header
+											+lazy-img({
+												wrap_mod: 'reply__logo',
+												img: '/images/header-logo.svg'
+											})
+											.reply__author Команда Seon
+										.reply__body 
+											p Здравствуйте, Анастасия! 
+											p Благодарим вас за отзыв. Мы рады, что вы остались довольны приобретением. Мы обязательно передадим ваши комментарии по поводу недостатков стола производителю. Всего доброго!
+								.reviews__item
+									.review
+										.review__header
+											.review__author Анастасия Клименок
+											.review__date 09.04.2020
+										.review__rate
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star
+												+icon('i-star')(style="width: 16px; height:16px")
+										.review__content Ребёнок очень доволен!!! Поиском кроссовок занимались около двух недель- у сына маленькая особенность: 46 размер ноги, для нас выбор обуви целая проблема, но Спортмастер нас выручил. Во первых выбор огромен, даже 46 размер кроссовок не проблема для этого замечательного магазина спортивных товаров! Определился сын очень быстро, надел эти кроссовки и не захотел снимать! Кроссовки «дышат», удобные, стильные - каждый день они шагают по дорогам Челябинска.
+										.review__summary
+											.review__plus
+												.review__plus-title Достоинства
+												.review__summary-content Удобные, красивые и прочные.
+											.review__minus 
+												.review__minus-title Недостатки
+												.review__summary-content Удобные, красивые и прочные.
+									.reply
+										.reply__header
+											+lazy-img({
+												wrap_mod: 'reply__logo',
+												img: '/images/header-logo.svg'
+											})
+											.reply__author Команда Seon
+										.reply__body 
+											p Здравствуйте, Анастасия! 
+											p Благодарим вас за отзыв. Мы рады, что вы остались довольны приобретением. Мы обязательно передадим ваши комментарии по поводу недостатков стола производителю. Всего доброго!
+								.reviews__item
+									.review
+										.review__header
+											.review__author Анастасия Клименок
+											.review__date 09.04.2020
+										.review__rate
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star
+												+icon('i-star')(style="width: 16px; height:16px")
+										.review__content Ребёнок очень доволен!!! Поиском кроссовок занимались около двух недель- у сына маленькая особенность: 46 размер ноги, для нас выбор обуви целая проблема, но Спортмастер нас выручил. Во первых выбор огромен, даже 46 размер кроссовок не проблема для этого замечательного магазина спортивных товаров! Определился сын очень быстро, надел эти кроссовки и не захотел снимать! Кроссовки «дышат», удобные, стильные - каждый день они шагают по дорогам Челябинска.
+								.reviews__item
+									.review
+										.review__header
+											.review__author Анастасия Клименок
+											.review__date 09.04.2020
+										.review__rate
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star
+												+icon('i-star')(style="width: 16px; height:16px")
+										.review__content Ребёнок очень доволен!!! Поиском кроссовок занимались около двух недель- у сына маленькая особенность: 46 размер ноги, для нас выбор обуви целая проблема, но Спортмастер нас выручил. Во первых выбор огромен, даже 46 размер кроссовок не проблема для этого замечательного магазина спортивных товаров! Определился сын очень быстро, надел эти кроссовки и не захотел снимать! Кроссовки «дышат», удобные, стильные - каждый день они шагают по дорогам Челябинска.
+										.review__summary
+											.review__plus
+												.review__plus-title Достоинства
+												.review__summary-content Удобные, красивые и прочные.
+											.review__minus 
+												.review__minus-title Недостатки
+												.review__summary-content Удобные, красивые и прочные.
+								.reviews__item
+									.review
+										.review__header
+											.review__author Анастасия Клименок
+											.review__date 09.04.2020
+										.review__rate
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star.active
+												+icon('i-star')(style="width: 16px; height:16px")
+											.product-descr__star
+												+icon('i-star')(style="width: 16px; height:16px")
+										.review__content Ребёнок очень доволен!!! Поиском кроссовок занимались около двух недель- у сына маленькая особенность: 46 размер ноги, для нас выбор обуви целая проблема, но Спортмастер нас выручил. Во первых выбор огромен, даже 46 размер кроссовок не проблема для этого замечательного магазина спортивных товаров! Определился сын очень быстро, надел эти кроссовки и не захотел снимать! Кроссовки «дышат», удобные, стильные - каждый день они шагают по дорогам Челябинска.
+										.review__summary
+											.review__plus
+												.review__plus-title Достоинства
+												.review__summary-content Удобные, красивые и прочные.
+											.review__minus 
+												.review__minus-title Недостатки
+												.review__summary-content Удобные, красивые и прочные.
+								.reviews__total
+									.show-more.js-reviews-show-more
+										span Показать все 36 отзывов
+										+icon('i-small-arrow')(style="width: 10px; height: 10px")
+					.product-page__tab-content(data-tab-content='5')
+						.product-page__media-toggler.js-toggler
+							span Документы
+							+icon('i-arrow-small')(style="width:12px; height: 12px")
+						.product-page__media-content
+							.downloads
+								a(href='#').downloads__item
+									span.downloads__icon.downloads__icon--pdf
+										+icon('i-document')(style="width: 24px; height: 28px")
+										span.downloads__type PDF
+									span.downloads__content
+										span.downloads__title Руководство по эксплуатации 
+										span.downloads__size 1,2 мб
+								a(href='#').downloads__item
+									span.downloads__icon.downloads__icon--xls
+										+icon('i-document')(style="width: 24px; height: 28px")
+										span.downloads__type XLS
+									span.downloads__content
+										span.downloads__title Прайс-лист на печать
+										span.downloads__size 1,2 мб
+								a(href='#').downloads__item
+									span.downloads__icon.downloads__icon--doc
+										+icon('i-document')(style="width: 24px; height: 28px")
+										span.downloads__type DOC
+									span.downloads__content
+										span.downloads__title Типовой договор на оказание услуг
+										span.downloads__size 1,2 мб
+								a(href='#').downloads__item
+									span.downloads__icon.downloads__icon--jpg
+										+icon('i-document')(style="width: 24px; height: 28px")
+										span.downloads__type JPG
+									span.downloads__content
+										span.downloads__title Фирменный буклет Seon
+										span.downloads__size 1,2 мб
+								a(href='#').downloads__item
+									span.downloads__icon.downloads__icon--rar
+										+icon('i-document')(style="width: 24px; height: 28px")
+										span.downloads__type RAR
+									span.downloads__content
+										span.downloads__title Архив полезных файлов
+										span.downloads__size 1,2 мб
+								a(href='#').downloads__item
+									span.downloads__icon.downloads__icon--avi
+										+icon('i-document')(style="width: 24px; height: 28px")
+										span.downloads__type AVI
+									span.downloads__content
+										span.downloads__title Видео производства
+										span.downloads__size 1,2 мб
+								a(href='#').downloads__item
+									span.downloads__icon.downloads__icon--tif
+										+icon('i-document')(style="width: 24px; height: 28px")
+										span.downloads__type TIF
+									span.downloads__content
+										span.downloads__title Наш подарочный календарик
+										span.downloads__size 1,2 мб
+				.product-page__area.product-page__second
+					.product-page__right
+						.product-control
+							.product-control__row
+								.product-control__status
+									+product-status({
+										mod: 'product-card__availability--available',
+										content: 'В наличии'
+									})
+								.product-control__in-cart
+									.product-card__cart
+										.product-card__count 2
+										+icon('i-cart-3')(style="width:26px; height: 22px")
+							.product-control__row.product-control__row--price
+								.product-control__price-current 321.00 BYN
+								.product-control__price-old 425.00 BYN
+							.product-control__counter
+								+counter()
+							.product-control__add-to-cart
+								.btn.btn--primary В корзину
+							.product-control__one-click(data-toggle="modal" data-target="#modal-feedback")
+								.btn.btn--wide Купить в 1 клик
+							a(href="#").product-control__favourites
+								+icon('i-heart-card-3')(style="width: 26px; height: 26px")
+								span.product-control__favourites-title В избранное
+						.product-control-sticky
+							.product-control-sticky__price-wrap
+								.product-control-sticky__price.product-control-sticky__price--discount 205.00 BYN
+								.product-control-sticky__price-old 305.00 BYN
+							.product-control-sticky__counter
+								+counter()
+							.product-control-sticky__add-to-card
+								.btn.btn--primary В корзину
+						.product-notification
+							.product-notification__title Акции
+							.product-notification__descr На протяжении всей осени дарим вам скидку 25% на бренд Nike.
+							a(href='#').product-notification__link Узнать подробнее
+					.product-page__descr.product-page__descr--mobile
+						.product-descr
+							.product-descr__code Артикул:14515.4
+							.product-descr__category Категория: Смартфоны
+							.product-descr__row
+								.product-descr__rate
+									.product-descr__star.active
+										+icon('i-star')(style="width: 12px; height:12px")
+									.product-descr__star.active
+										+icon('i-star')(style="width: 12px; height:12px")
+									.product-descr__star.active
+										+icon('i-star')(style="width: 12px; height:12px")
+									.product-descr__star.active
+										+icon('i-star')(style="width: 12px; height:12px")
+									.product-descr__star
+										+icon('i-star')(style="width: 12px; height:12px")
+									.product-descr__rate-total 4,2
+								a(href="#").product-descr__feedback(data-tab-index='4' data-scroll="true") Отзывов 58
+							.product-descr__table
+								.product-descr__table-title Общие характеристики
+								.product-features
+									.product-features__item 
+										.product-features__prop Тип
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop Тип SIM-карты
+										span.product-features__sep
+										.product-features__val naon Sim
+									.product-features__item 
+										.product-features__prop Объём оперативной памяти
+										span.product-features__sep
+										.product-features__val 4096 Мб
+									.product-features__item 
+										.product-features__prop Операционная система 
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop Тип
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop Тип
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__item 
+										.product-features__prop Тип
+										span.product-features__sep
+										.product-features__val Смартфон
+									.product-features__more(data-tab-index='2' data-scroll="true") Смотреть все характеристики
+	include ../product-slider/product-slider-inner
+	include ../product-slider/product-slider-inner-with-tabs
+.product-page__utp
+	.container
+		.product-page__utp-title.fz-24 Почему FASTER?
+	include ../index-utp/index-utp

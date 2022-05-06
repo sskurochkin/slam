@@ -1,0 +1,13 @@
+-
+	//var PROJECT_NAME = '/elitstroy'
+	var PROJECT_NAME = ''
+	var PROJECT_MODE = dev_mode //dev_mode прокидывается из webpack конфига для определения типа сборки
+	var SITE_TEMPLATE_PATH = PROJECT_NAME+'/local/templates/html/'
+	var pixel = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
+	function getRandom() {
+		return Math.floor(Math.random() * 9999999999)
+	}
+	function replacePhone(phone) {
+		return phone.replace(/\s/gi, '').replace(/\(/gi, '').replace(/\)/gi, '').replace(/\-/gi, '')
+	}
+

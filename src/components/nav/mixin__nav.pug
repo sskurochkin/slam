@@ -1,0 +1,122 @@
+mixin nav(args= {})
+	//- ПРИМЕР, дописать параметры
+		+nav(
+			{	modClass: 'nav--modClass',
+				big_nav: '',
+				list_hidden: '',
+				list: [
+					{   name: 'LVL_1_NAME_1-',
+						img: 'images/main-nav-0.png'},
+					{name: 'LVL_1_NAME_2',
+						list: [
+							{ name: 'LVL_2_NAME_1'},
+							{ name: 'LVL_2_NAME_2',
+								list: [
+									{name: 'LVL_3_NAME_1'},
+									{name: 'LVL_3_NAME_2'},
+								]
+							},
+						]
+					}
+				]
+			}
+		)
+
+	+include-style('nav')
+	+include-script('nav')
+	div.js-nav.nav(class= args.mod)
+		ul.nav-list
+			each item in args.list
+				li.nav-item(
+					class= item.active && 'active'
+					class= (item.list || item.big_nav) && 'has-nav'
+					class= item.big_nav && 'has-nav--big'
+					class= item.disabled && 'disabled'
+				)
+					#{item.span ? 'span' : 'a'}.nav-link(
+						href= !item.span && (item.link || '#')
+						aria-label= item.name
+						data-ajax= item.ajax && 'true'
+						data-ajax-src= item.ajax && item.ajax.src
+						data-ajax-event= item.ajax && item.ajax.event
+						data-ajax-target= item.ajax && item.ajax.target
+						data-ajax-reinit= item.ajax && item.ajax.reinit
+					)
+						if (item.img)
+							+lazy-img({
+								img: item.img,
+								placeholder: pixel,
+								img_mod: 'nav-item-img',
+								wrap_mod: 'nav-item-img-wrap',
+								link: false,
+								aria_label: false,
+							})
+
+						span.nav-item-name!= item.name
+						if(item.list || item.big_nav || item.list_hidden)
+							span.nav-toggle.js-nav-toggle
+								if (item.icon)
+									+icon(item.icon.name)(width= item.icon.width height= item.icon.height)
+					if(item.list || item.big_nav)
+						div.js-nav.nav-lvl2(id= item.ajax && item.ajax.target && item.ajax.target.replace('#', ''))
+							if (item.list)
+								ul.nav-lvl2-list
+									each item2, index in item.list
+										li.nav-lvl2-item(
+											class= item2.active && 'active'
+											class= item2.list && 'has-nav'
+											class= item2.disabled && 'disabled'
+										)
+											#{item2.span ? 'span' : 'a'}.nav-lvl2-link(href= !item2.span && (item2.link || '#') aria-label= item.name)
+												if (item2.img)
+													+lazy-img({
+														img: item2.img,
+														placeholder: pixel,
+														img_mod: 'nav-item-img',
+														wrap_mod: 'nav-item-img-wrap',
+														link: false,
+														aria_label: false,
+													})
+												if (item2.icon)
+													+icon(item2.icon.name)(width= item2.icon.width height= item2.icon.height)
+												span.nav-lvl2-item-name!= item2.name
+												if(item2.list)
+													span.nav-lvl2-toggle.js-nav-toggle
+														+icon('i-arrow-sm')(width="10px" height="10px")
+											if(item2.list)
+												div.js-nav.nav-lvl3
+													ul.nav-lvl3-list
+														each item3 in item2.list
+															li.nav-lvl3-item(
+																class= item3.active && 'active'
+																class= item3.list && 'has-nav'
+																class= item3.disabled && 'disabled'
+															)
+																#{item3.span ? 'span' : 'a'}.nav-lvl3-link(href= !item3.span && (item3.link || '#') aria-label= item3.name)
+																	if (item3.img)
+																		+lazy-img({
+																			img: item3.img,
+																			placeholder: pixel,
+																			img_mod: 'nav-item-img',
+																			wrap_mod: 'nav-item-img-wrap',
+																			link: false,
+																			aria_label: false,
+																		})
+																	if (item3.icon)
+																		+icon(item3.icon.name)(width= item3.icon.width height= item3.icon.height)
+																	span.nav-lvl3-item-name!= item3.name
+									if ((args.mod == 'nav--catalog' ) && (item.list.length > 6))
+										.nav-show-more.show-more
+											span Показать больше
+											+icon('i-arrow-small')(style="width:10px; height: 10px;")
+			if ((args.mod == 'nav--side-catalog' )  && (args.list.length > 6) )
+				.nav-show-more.show-more
+					span Показать больше
+					+icon('i-arrow-small')(style="width:10px; height: 10px;")
+			if ((args.mod == 'nav--side-search' )  && (args.list.length > 6) )
+				.nav-show-more.show-more
+					span Смотреть еще
+					+icon('i-arrow-small')(style="width:10px; height: 10px;")
+
+
+

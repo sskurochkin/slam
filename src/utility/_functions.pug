@@ -1,0 +1,21 @@
+-
+    //Проверяет наличие имени компонента в массиве имен и пушит, если такого имени ещё нет
+    function isInComponentsList(list, name) {
+        if (list && list.indexOf(name) === -1) {
+            list.push(name);
+        }
+    }
+
+    function isInComponentsModList(list, name, modName) {
+        let inList = false;
+        list.forEach((it) => {
+            if(it[0] == name && it[1] == modName) {
+                inList = true;
+            }else{
+                inList = false;
+            }
+        })
+        if (!inList) {
+            list.push([name, modName]);
+        }
+    }

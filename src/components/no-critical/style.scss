@@ -1,0 +1,7 @@
+.no-critical {
+  visibility: visible!important;
+  &:before, &:after {
+    display: none!important;
+    content: unset;
+  }
+}

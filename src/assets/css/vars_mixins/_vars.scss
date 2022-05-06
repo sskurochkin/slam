@@ -1,0 +1,83 @@
+//- Grid
+//точки смены устройств
+// $xxl: 1680px;
+$xl: 1700px;
+$lg: 1340px;
+$md: 1100px;
+$sm: 768px;
+$xs: 576px;
+//ширины контейнеров
+// $xxl-container: 1670px;
+$xl-container: 1630px;
+$lg-container: 1300px;
+$md-container: 1024px;
+$sm-container: 768px;
+$xs-container: 100%;
+$container-max-widths: (xs: 100%, sm: $sm-container, md: $md-container, lg: $lg-container, xl: $xl-container, );
+$grid-breakpoints: (xs: 0, sm: $sm, md: $md, lg: $lg, xl: $xl, );
+// 1/2 отступа между колонками
+$grid-gutter-width: 20px;
+//количество колонок сетки Добавить!
+$grid-columns: 10;
+// Fonts
+//$f-size: 16px;//base -> 1rem
+$f-size: 1rem;
+$f-main: 'Helios',
+Arial,
+Verdana,
+sans-serif;
+$f-sec: 'Roboto',
+Arial,
+Verdana,
+sans-serif;
+// Rem font-sizes
+// font-size: rem(20);
+@function rem($num) {
+    @return strip-unit($num) / 16 * 1rem;
+}
+
+// Z-index master list
+$zindex-dropdown: 100 !default;
+$zindex-sticky: 120 !default;
+$zindex-fixed: 130 !default;
+$zindex-modal-backdrop: 140 !default;
+$zindex-modal: 150 !default;
+$zindex-popover: 160 !default;
+$zindex-tooltip: 170 !default;
+$zindex-preloader: 180 !default;
+// Colors
+$bg-main: #fff;
+$bg-hover: #f8f8f8;
+$c-hr: #ccc;
+$bg-inc-mark: #ff9;
+$c-sec: #d15645;
+//цвета текста
+$c-text: #2B2A29;
+$c-text2: #828282;
+$c-link: #fff;
+$c-gray: #BDBDBD; //цвет с вески
+//основные цвета макета
+$c-primary-black: #2A2C2C;
+$c-primary-white: #F6F6F6;
+$c-primary: #0D2DFF;
+$c-primary-2: #FE7235;
+$c-primary-hover: #0B21B1;
+$c-error: #EB5757;
+$c-trp: transparent;
+$blue: #234399;
+$red: #f45057;
+$green: #379f2f;
+$yellow: #e8a12b;
+$white: #fff;
+$black: #000;
+$primary: #894083;
+$second: #ffaf02;
+$bgc: #fff;
+$fz: 50px;
+$menuHeight: 40px;
+$header: 126px;
+$text: #404040;
+$rec: #00C2CE;
+$new: #8DC63F;
+$discount: #FDCA33;
+$gray: #828282;

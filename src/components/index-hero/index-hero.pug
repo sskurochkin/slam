@@ -1,0 +1,67 @@
++include-style('index-hero')
++include-script('index-hero')
+
+section.index-hero
+	.container
+		.index-hero__inner
+			.index-hero__item.index-hero__item--main
+				.index-hero__slider
+					+swiper({
+						container_mod: 'slider-fs__container',
+						wrapper_mod: '',
+						navigation: true,
+						pagination: false,
+						autoplay: true
+					}).slider-fs.js-slider-fs
+						.swiper-slide
+							+lazy-picture-slider({
+								source:[
+									{
+									media: '768',
+									img: 'images/slider-1.png',
+									placeholder: pixel
+									},
+										{
+									media: '0',
+									img: 'images/slider-1.png',
+									placeholder: pixel
+									}
+								],
+								text: 'Slide 1',
+								link: true,
+								link_class: 'slider__link'
+							})
+						.swiper-slide
+							+lazy-picture-slider({
+								source:[
+									{
+									media: '768',
+									img: 'images/slider-1.png',
+									placeholder: pixel
+									},
+										{
+									media: '0',
+									img: 'images/slider-1.png',
+									placeholder: pixel
+									}
+								],
+								text: 'Slide 2',
+								link: true,
+								link_class: 'slider__link'
+							})
+						.swiper-slide
+							+lazy-picture-slider({
+								source:[
+									{
+									media: '768',
+									img: 'images/slider-1.png',
+									placeholder: pixel
+									},
+										{
+									media: '0',
+									img: 'images/slider-1.png',
+									placeholder: pixel
+									}
+								],
+								text: "Slide 3"
+							})

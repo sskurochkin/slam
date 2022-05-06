@@ -1,0 +1,93 @@
+// @import 'src/assets/css/vars_mixins/vars_mixins';
+// .btn {
+// 	display         : inline-flex;
+// 	align-items     : center;
+// 	justify-content : center;
+// 	cursor          : pointer;
+// 	transition      : background .3s, color .3s, border .3s;
+// 	text-align      : center;
+// 	white-space     : nowrap;
+// 	text-decoration : none;
+// 	letter-spacing  : 0;
+// 	background-color: $c-primary;
+// 	color           : #fff;
+// 	font-size       : 16px;
+// 	line-height     : 1;
+// 	font-weight     : 600;
+// 	border-radius   : 3px;
+// 	height          : 40px;
+// 	@media (max-width: $md - 1) {
+// 		height: 34px;
+// 	}
+// 	svg {
+// 		transition: fill .3s;
+// 	}
+// 	&:hover {
+// 		text-decoration: none;
+// 	}
+// 	@media (max-width: $sm - 1) {
+// 		font-size: 14px;
+// 	}
+// 	&--catalog {
+// 		padding: 4px 9px;
+// 		.icon {
+// 			margin-right: 4px;
+// 		}
+// 		&:hover {
+// 			@media (min-width: $md) {
+// 				cursor          : pointer;
+// 				background-color: $c-primary-2;
+// 			}
+// 		}
+// 	}
+// 	&--primary {
+// 		padding: 0px 17px;
+// 		&:hover {
+// 			@media (min-width: $md) {
+// 				cursor          : pointer;
+// 				background-color: $c-primary-hover;
+// 			}
+// 		}
+// 	}
+// 	&--wide {
+// 		width           : 100%;
+// 		background-color: transparent;
+// 		color           : $c-primary;
+// 		border          : 1px solid $c-primary;
+// 		display         : flex;
+// 		justify-content : center;
+// 		&:hover {
+// 			@media (min-width: 1024px) {
+// 				cursor          : pointer;
+// 				color           : #fff;
+// 				background-color: $c-primary;
+// 			}
+// 		}
+// 	}
+// 	&--fw {
+// 		width: 100%;
+// 	}
+// 	&--color {
+// 		border          : 1px solid $c-primary-2;
+// 		padding         : 0px 17px;
+// 		color           : $c-primary-2;
+// 		transition      : all .3s ease;
+// 		background-color: #fff;
+// 		&:hover {
+// 			@media (min-width: 1024px) {
+// 				cursor          : pointer;
+// 				background-color: $c-primary-2;
+// 				color           : #fff
+// 			}
+// 		}
+// 	}
+// 	&--green {
+// 		background-color: #6BC684;
+// 		&:hover {
+// 			@media (min-width: 1024px) {
+// 				cursor          : pointer;
+// 				background-color: #3F9E59;
+// 			}
+// 		}
+// 	}
+// }

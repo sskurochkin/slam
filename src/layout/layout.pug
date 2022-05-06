@@ -1,0 +1,91 @@
+include ../utility/_globalVars
+include ../utility/_mixins
+include ../utility/_functions
+
+block vars
+	- var pageTitle
+	- var pageBodyClass
+	- var dir
+
+- var mixinsList = [] //список имен всех миксинов проекта
+- var componentsList = [] //список имен всех компонентов
+- var componentsModList = [] //список имен всех модификаторов стилей
+- var componentsCriticalList = [] // список имен компонентов, стили которых нужно подключить инлайного в head
+- var componentsScriptsList = [] // список имен компонентов, скрипты которых нужно подключить на страницу. они не должны подключаться в main.js
+- var vendorScriptsList = [] // список имен вендоров, скрипты которых нужно подключить на страницу. они не должны подключаться в main.js
+
+doctype html
+html(lang='ru-RU')
+
+	head
+		//- Мета инфо
+		//- include ../utility/_favicon
+		meta(charset='UTF-8')
+		meta(name='format-detection' content='telephone=no')
+		meta(name='viewport' content='width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1.0')
+		meta(name='description' content='SLAMBOX')
+		title= pageTitle
+
+		<link rel="icon" type="image/png" href="/local/templates/html/favicons/favicon-16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="/local/templates/html/favicons/favicon-32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/local/templates/html/favicons/favicon-48.png" sizes="48x48">
+		<link rel="icon" type="image/png" href="/local/templates/html/favicons/favicon-192.png" sizes="192x192">
+		<link rel="apple-touch-icon" sizes="180x180" href="/local/templates/html/favicons/favicon-180.png">
+
+		<link rel="preload" href="/local/templates/html/fonts/subset-OpenSans-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+		<link rel="preload" href="/local/templates/html/fonts/subset-OpenSans-SemiBold.woff" as="font" type="font/woff" crossorigin="anonymous">
+		<link rel="preload" href="/local/templates/html/fonts/subset-OpenSans-Bold.woff" as="font" type="font/woff" crossorigin="anonymous">
+
+		//- Подключение общих критический стилей
+		if (PROJECT_MODE !== 'dev')
+			style(data-critical)
+				//- include ../../local/templates/html/critical.css
+
+			//- Якорь для втавки критикал стилей компнентов 
+			style(data="component")
+
+		//- Подключение критический стилей отдельных страниц
+		block componentsCriticalStyles
+
+
+	body.no-transition.no-js(class = pageBodyClass)
+		script.
+			document.querySelector('body').classList.remove('no-js');
+
+		.page
+			include ../components/header/header
+			main.main
+				block main
+
+			include ../components/footer/footer
+
+
+		
+		if (PROJECT_NAME == '' && PROJECT_MODE !== 'dev')
+			// Либы, используемые на всех страницах
+			script(src="./js/jquery/jquery.min.js" defer)
+			script(src="./js/vendoe/alpine.js" defer)
+			// Вялая загрузка картинок
+			script(src="./js/vendor/lazyload.min.js" defer)
+
+		if (PROJECT_NAME == '')
+			// Скрипты компонентов только для этой страницы
+			block vendorScripts
+
+		// Либы, используемые только на этой странице
+		block scripts
+
+		if (PROJECT_NAME == '' && PROJECT_MODE !== 'dev')
+			// Основные скрипты для всех страниц
+			script(src="./js/app.min.js" defer)
+
+		// Скрипты компонентов только для этой страницы
+		block componentsScripts
+
+		// Общие стели для всех страниц
+		<link href="/local/templates/html/critical.css" rel="stylesheet">
+
+		block componentsStyles
+
+		//якорь подключения объединенного js
+		script(data="component")

@@ -1,0 +1,9 @@
+mixin lazy-video(args= {})
+	//- ПРИМЕР
+		+lazy-video({
+			src: 'video/video.mp4',
+			poster: 'video.png'
+		}).MOD_CLASS
+	video.lazy-video(class= args.video_mod, controls='', data-src= args.src, data-poster= args.poster)&attributes(attributes)
+		block
+

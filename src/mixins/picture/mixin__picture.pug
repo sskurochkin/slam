@@ -1,0 +1,33 @@
+mixin picture(args= {})
+  //- ПРИМЕР
+      +picture({
+          source: [
+              {
+                  img: 'images/fs-slide-'+ args.count +'-xl.jpg',
+                  media: 415
+              }, {
+                  img: 'images/fs-slide-'+ args.count +'-sm.jpg 1x',
+                  media: 250
+              }
+          ],
+          link: true,
+          link_class: '',
+          img: 'images/fs-slide-'+ args.count +'-xl.jpg',
+          img_mod: 'CLASS-img',
+          wrap_mod: 'CLASS-img-wrap'
+      })
+  -
+    args.img = !args.http && args.img === pixel ? pixel : args.img
+  if(args.link)
+    a(class= args.link_class href='#' aria-label='#')
+      picture(class= args.wrap_mod)
+        each source in args.source
+          source(srcset= source.img, media='(min-width: ' + source.media + 'px)')
+        img(class= args.img_mod, srcset= args.img, alt='img')
+  else
+    picture(class= args.wrap_mod)
+      if(args.source)
+        each source in args.source
+          source(srcset= source.img, media='(min-width: ' + source.media + 'px)')
+        img(class= args.img_mod, srcset= args.img, alt='img')
+

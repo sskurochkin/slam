@@ -1,0 +1,25 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Slam soft test page'
+	- var pageBodyClass = 'index'
+	- var dir = './'
+
+
+block main
+	include ../../components/index-hero/index-hero
+	include ../../components/product-slider/product-slider
+
+
+block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts
+	script(src="./js/vendor/swiper.min.js" defer)
