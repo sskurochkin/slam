@@ -26,11 +26,11 @@
 	position: relative;
 
 	@media (max-width: $xs - 1) {
-		overflow: hidden;
+		// overflow: hidden;
+		padding: 0 10px;
 	}
 
 	@media (max-width: $md - 1) {
-		height      : auto;
 		margin      : 0px -4px;
 		margin-right: 0px;
 	}
@@ -48,12 +48,17 @@
 			z-index       : 10;
 
 			@media (max-width: $md - 1) {
-				padding: 0px 0px;
-				margin : 0px 0px;
+				// padding: 0px 0px;
+				// margin : 0px 0px;
 			}
 		}
 
 
+	}
+	.swiper-wrapper{
+		@media (max-width: $md - 1) {
+			align-items: start;
+		}
 	}
 
 	.product-card-wrap {
@@ -70,7 +75,7 @@
 		}
 
 		@media (max-width: $md - 1) {
-			width  : 272px;
+			width  : 310px;
 			padding: 0px 4px;
 			display: flex;
 		}
@@ -129,71 +134,5 @@
 
 	@media (max-width: $sm - 1) {
 		padding: 25px 0px;
-	}
-}
-
-
-.product-slider-ajax-tabs {
-	margin-bottom : 22px;
-	padding-bottom: 20px;
-
-	@media (max-width: $sm - 1) {
-		margin-bottom : 8px;
-		padding-bottom: 25px;
-	}
-
-	&__inner {
-		display    : flex;
-		align-items: center;
-
-	}
-
-	overflow : auto;
-
-	&__item {
-		font-weight : 600;
-		font-size   : 24px;
-		margin-right: 32px;
-		color       : #AAAAAA;
-		position    : relative;
-		line-height : 1.25;
-		white-space : nowrap;
-
-		@media (max-width: $sm - 1) {
-			font-size   : 14px;
-			margin-right: 16px;
-		}
-
-		&:after {
-			position        : absolute;
-			content         : '';
-			left            : 0;
-			right           : 100%;
-			bottom          : -6px;
-			height          : 3px;
-			background-color: $c-primary-2;
-			transition      : all .3s ease;
-
-		}
-
-		&:hover {
-			@media (min-width: 1024px) {
-				cursor: pointer;
-
-				&:after {
-					right: 0;
-				}
-			}
-		}
-
-		&.active {
-			pointer-events: none;
-			color         : inherit;
-
-			&:after {
-				right: 0;
-			}
-
-		}
 	}
 }

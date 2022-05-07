@@ -1,58 +1,100 @@
 @import "src/assets/css/vars_mixins/vars_mixins";
+
 .footer {
     background-color: $primary;
     color: #fff;
     font-family: 'Roboto';
     font-size: 1.5rem;
     padding: 40px 0;
+
     &__menu {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: $sm - 1) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
+
+
+
     &__list {
         margin-right: 20px;
-        li:first-of-type {
-            font-weight: 600;
-            font-size: 1.8rem;
-            margin-bottom: 2.5rem;
+
+        li{
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            justify-content: flex-start;
+            @media (max-width: $sm - 1){
+                justify-content: center;
+            }
+
+            &:first-of-type {
+                font-weight: 600;
+                font-size: 1.8rem;
+                margin-bottom: 2.5rem;
+                text-align: center;
+            }
         }
+        
+
         &:last-child {
             margin-right: 0;
+
+            @media (max-width: $sm - 1) {
+                margin-bottom: 0;
+                font-size: 12px;
+            }
+            
         }
+        @media (max-width: $sm - 1) {
+            margin-right: 0;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        
     }
+
     &__link {
         color: #fff;
-        margin-bottom: 2rem;
         display: inline-block;
         transition: all .3s ease;
+
         &:hover {
             opacity: .6;
         }
     }
-    &__icon {
-        padding-left: 30px;
-        position: relative;
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            margin: auto 0;
-            display: block;
-            height: 20px;
-            width: 20px;
-            background-repeat: no-repeat;
-            background-size: 1.8rem;
-            background-position: center center;
-        }
+    &__icon{
+        margin-right: 4px;
+        fill: #fff;
     }
+
+
+
     .ico {
         width: 32px;
         height: 32px;
         margin-bottom: 0;
+        border-radius: 50%;
+        background-color: rgba(254, 254, 254, 0.145);
+        position: relative;
+        & .icon{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            fill: #fff;
+        }
+
         &:first-child {
             margin-right: 5px;
         }
     }
 }
+
+

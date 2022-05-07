@@ -31,11 +31,16 @@
 			ul.footer__list 
 				li Контакты
 				li 
-					a(href='#').footer__link.footer__icon.i-time Доставка и оплата
+					+icon('i-time')(style='width:24px; height:24px').footer__icon
+					a(href='#').footer__link Доставка и оплата
 				li 
-					a(href='tel:+375173880082').footer__link.footer__icon.i-phone-alt +375 (17) 388-00-82
+					+icon('i-phone-alt')(style='width:24px; height:24px').footer__icon
+					a(href='tel:+375173880082').footer__link +375 (17) 388-00-82
 				li 
-					a(href='mailto:info@slam.shop').footer__link.footer__icon.i-mail-alt info@slam.shop
+					+icon('i-mail')(style='width:20px; height:20px').footer__icon
+					a(href='mailto:info@slam.shop').footer__link info@slam.shop
 				li 
-					a(href='#').footer__link.ico.i-fb
-					a(href='#').footer__link.ico.i-inst
+					a(href='#').footer__link.ico
+						+icon('i-fb')(style='width:28px; height:28px')
+					a(href='#').footer__link.ico
+						+icon('i-inst')(style='width:28px; height:28px')

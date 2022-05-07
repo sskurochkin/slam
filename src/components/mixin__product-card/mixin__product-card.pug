@@ -19,7 +19,7 @@ mixin product-card(args={})
 							mod: 'stock__discount--rec',
 							content: 'Рекомендуем'
 						})
-				img(src='https://picsum.photos/200' alt="").card__pic
+				img(src=`https://picsum.photos/200` alt="").card__pic
 				span.card__fav(class=args.favourites ? 'active' : '')
 						+icon('i-heart-card-3')(style="width:22px; height:22px")
 			.card__info
@@ -36,7 +36,7 @@ mixin product-card(args={})
 				//- 		})
 				if (args.availability == 'available')
 					+product-status({
-						mod: '',
+						mod: 'available',
 						content: 'В наличии'
 					})
 				if (args.availability == 'false')
@@ -46,7 +46,7 @@ mixin product-card(args={})
 					})
 				if (args.availability == 'unavailable')
 					+product-status({
-						mod: '',
+						mod: 'available--not',
 						content: 'Отсутствует'
 					})
 				p.vendor Код:&nbsp;

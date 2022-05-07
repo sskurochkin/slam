@@ -13,17 +13,25 @@ section.index-hero
 						pagination: false,
 						autoplay: true
 					}).slider-fs.js-slider-fs
+						.swiper-slide 
+							<picture class=" index-slider__img-wrap">
+								<source  media="(min-width: 768px)"  srcset= '/local/templates/html/images/slider-1.jpg'>
+								<source media="(min-width: 0px)"  srcset="/local/templates/html/images/slider-1-mob.jpg">
+								img(src="/local/templates/html/images/slider-1.jpg" alt="")
+							</picture>
+							p 
+								span 1000000
 						.swiper-slide
 							+lazy-picture-slider({
 								source:[
 									{
 									media: '768',
-									img: 'images/slider-1.png',
+									img: 'images/slider-1.jpg',
 									placeholder: pixel
 									},
 										{
 									media: '0',
-									img: 'images/slider-1.png',
+									img: 'images/slider-1-mob.jpg',
 									placeholder: pixel
 									}
 								],
@@ -36,12 +44,12 @@ section.index-hero
 								source:[
 									{
 									media: '768',
-									img: 'images/slider-1.png',
+									img: 'images/slider-1.jpg',
 									placeholder: pixel
 									},
 										{
 									media: '0',
-									img: 'images/slider-1.png',
+									img: 'images/slider-1-mob.jpg',
 									placeholder: pixel
 									}
 								],
@@ -54,12 +62,12 @@ section.index-hero
 								source:[
 									{
 									media: '768',
-									img: 'images/slider-1.png',
+									img: 'images/slider-1.jpg',
 									placeholder: pixel
 									},
 										{
 									media: '0',
-									img: 'images/slider-1.png',
+									img: 'images/slider-1-mob.jpg',
 									placeholder: pixel
 									}
 								],
