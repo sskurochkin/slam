@@ -250,7 +250,8 @@
         transition: all .3s ease;
 
         .icon {
-            fill: #F2F2F2;
+            fill: #fff;
+            margin-right: 2px;        
         }
 
         &:hover {
@@ -260,18 +261,6 @@
         &--underline {
             text-decoration: underline;
             text-decoration-style: dashed;
-        }
-    }
-
-    &__icon {
-        height: $menuHeight;
-        // line-height: $menuHeight;
-        width: 16px;
-        height: 16px;
-        display: inline-block;
-
-        &:last-child {
-            margin-right: 5px;
         }
     }
 
@@ -350,9 +339,4 @@
         background-color: $primary;
         border-radius: 8px;
     }
-}
-
-.menu__link .icon {
-    margin-right: 2px;
-    fill: aliceblue;
 }

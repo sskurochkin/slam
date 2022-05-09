@@ -25,7 +25,7 @@
 	padding: 0 90px;
 	position: relative;
 
-	@media (max-width: $xs - 1) {
+	@media (max-width: $sm - 1) {
 		// overflow: hidden;
 		padding: 0 10px;
 	}
@@ -77,7 +77,12 @@
 		@media (max-width: $md - 1) {
 			width  : 310px;
 			padding: 0px 4px;
+			// margin: 0 10px;
 			display: flex;
+		}
+		@media (max-width: $xs - 1) {
+			margin: 0 10px;
+			display: block;
 		}
 	}
 	.swiper-button-next,
@@ -124,15 +129,15 @@
 	}
 }
 
-.product-slider-section-bg {
-	padding         : 52px 0px;
-	background-color: #FAFAFB;
+// .product-slider-section-bg {
+// 	padding         : 52px 0px;
+// 	background-color: #FAFAFB;
 
-	@media (max-width: $md - 1) {
-		padding: 40px 0px;
-	}
+// 	@media (max-width: $md - 1) {
+// 		padding: 40px 0px;
+// 	}
 
-	@media (max-width: $sm - 1) {
-		padding: 25px 0px;
-	}
-}
+// 	@media (max-width: $sm - 1) {
+// 		padding: 25px 0px;
+// 	}
+// }

@@ -28,12 +28,26 @@ window.addEventListener('load', function () {
 						watchOverflow: true,
 						simulateTouch: true,
 						slidesPerView: 'auto',
+						// centeredSlides: true,
+						// centeredSlidesBounds: true,
 						slideClass: 'product-card-wrap',
 						pagination: {
-							el: $(el).find('.js-swiper-pagination'),
-							clickable: true,
-							// dynamicBullets: true,
-						},
+									el: $(el).find('.js-swiper-pagination'),
+									clickable: true,
+									// dynamicBullets: true,
+								},						
+						// breakpoints:{
+						// 	575:{
+						// 		slidesPerView: 'auto',
+						// 		centeredSlides: false,
+						// 		spaceBetween: 0,
+						// 		pagination: {
+						// 			el: $(el).find('.js-swiper-pagination'),
+						// 			clickable: true,
+						// 			// dynamicBullets: true,
+						// 		},
+						// 	}
+						// }
 
 					}
 				})

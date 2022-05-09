@@ -11,7 +11,6 @@ section.index-hero
 						wrapper_mod: '',
 						navigation: true,
 						pagination: false,
-						autoplay: true
 					}).slider-fs.js-slider-fs
 						.swiper-slide 
 							<picture class=" index-slider__img-wrap">
@@ -20,25 +19,7 @@ section.index-hero
 								img(src="/local/templates/html/images/slider-1.jpg" alt="")
 							</picture>
 							p 
-								span 1000000
-						.swiper-slide
-							+lazy-picture-slider({
-								source:[
-									{
-									media: '768',
-									img: 'images/slider-1.jpg',
-									placeholder: pixel
-									},
-										{
-									media: '0',
-									img: 'images/slider-1-mob.jpg',
-									placeholder: pixel
-									}
-								],
-								text: 'Slide 1',
-								link: true,
-								link_class: 'slider__link'
-							})
+								span Slide 1
 						.swiper-slide
 							+lazy-picture-slider({
 								source:[
@@ -72,4 +53,20 @@ section.index-hero
 									}
 								],
 								text: "Slide 3"
+							})
+						.swiper-slide
+							+lazy-picture-slider({
+								source:[
+									{
+									media: '768',
+									img: 'images/slider-1.jpg',
+									placeholder: pixel
+									},
+										{
+									media: '0',
+									img: 'images/slider-1-mob.jpg',
+									placeholder: pixel
+									}
+								],
+								text: "Slide 4"
 							})
