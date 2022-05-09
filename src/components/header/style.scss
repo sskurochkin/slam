@@ -1,4 +1,5 @@
 @import "src/assets/css/vars_mixins/vars_mixins";
+
 .header {
     position: fixed;
     top: 0;
@@ -8,29 +9,54 @@
     background-color: #fff;
     box-shadow: 0 0 8px 2px rgba(54, 54, 54, 0.15);
     height: $header;
+
+    @media (max-width: $md - 1) {
+        height: $header-md;
+    }
+
+    @media (max-width: $sm - 1) {
+        height: auto;
+    }
+
     &__content {
         height: $header - $menuHeight;
         position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (max-width: $md - 1) {
+            flex-wrap: wrap;
+            padding-top: 10px;
+        }
+
+        @media (max-width: $md - 1) {
+            height: auto;
+            margin-bottom: 5px;
+        }
+
         &>* {
-            margin: 0 25px;
+            margin: 0 20px;
+
             &:first-child {
                 margin-left: 0;
             }
+
             &:last-child {
                 margin-right: 0;
             }
         }
     }
+
     &__logo {
         flex: 0 0 156px;
+
         img {
             width: 156px;
             height: 100%;
         }
     }
+
     &__quote {
         flex: 0 0 200px;
         text-align: center;
@@ -40,10 +66,22 @@
         font-size: 14px;
         line-height: 22px;
         color: #828282;
+
+        @media (max-width: $sm - 1) {
+            display: none;
+        }
     }
+
     &__input {
         position: relative;
         flex: 1 1 auto;
+
+        @media (max-width: $md - 1) {
+            order: 2;
+            flex: 1 0 100%;
+            margin: 6px 0 0;
+        }
+
         span {
             position: absolute;
             height: 32px;
@@ -53,17 +91,20 @@
             margin: auto;
             fill: $primary;
             cursor: pointer;
+
             &:last-of-type {
                 height: 24px;
                 width: 24px;
                 left: auto;
                 right: 18px;
             }
+
             &:hover {
                 opacity: .6;
             }
         }
     }
+
     &__search {
         display: block;
         border: none;
@@ -76,41 +117,63 @@
         line-height: 52px;
         color: #000;
         font-family: 'OpenSans', sans-serif;
+
+        @media (max-width: $sm - 1) {
+            height: 45px;
+        }
     }
+
     &__fav {
         display: flex;
         align-items: center;
         cursor: pointer;
+
+        @media (max-width: $sm - 1) {
+            font-size: 0;
+            position: absolute;
+            margin: auto 0;
+            top: 10px;
+            right: 90px;
+        }
+
         .icon {
             fill: $primary;
             margin-right: 10px;
             transition: all .3s ease;
         }
+
         &:hover .icon {
             fill: $second;
         }
+
         &:hover {
             text-decoration: underline;
         }
     }
+
     &__cart {
         display: flex;
         align-items: center;
         cursor: pointer;
+
         .icon {
             fill: $primary;
         }
+
         &-icon {
             position: relative;
             width: 40px;
         }
+
         &:hover .icon {
             fill: $second;
         }
     }
+
     &__price {
         margin-left: 12px;
         cursor: pointer;
+
         &:hover {
             text-decoration: underline;
         }
@@ -124,18 +187,58 @@
     align-items: center;
     background-color: $primary;
     border-radius: 0 0 20px 20px;
+
+    @media (max-width: $sm - 1) {
+        position: relative;
+        height: auto;
+        min-height: 40px;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &:hover .menu__list {
+            display: block;
+        }
+    }
+
     &__list {
         display: flex;
         justify-content: start;
+
+        @media (max-width: $sm - 1) {
+            position: relative;
+            z-index: 10;
+            display: none;
+            flex-direction: column;
+            background-color: $primary;
+        }
+
         li {
-            margin: 0 10px;
+            margin: 0 $menuMargin;
             height: $menuHeight;
             line-height: $menuHeight;
         }
+
         &:last-of-type {
             justify-content: end;
         }
+
+        &:first-child {
+            @media (max-width: $sm - 1) {
+                padding-top: 60px;
+            }
+        }
+
+        &:last-child {
+
+            li:first-child,
+            li:nth-child(2) {
+                @media (max-width: $md - 1) {
+                    display: none;
+                }
+            }
+        }
     }
+
     &__link {
         height: $menuHeight;
         // line-height: $menuHeight;
@@ -145,27 +248,33 @@
         padding: 0 10px;
         font-size: 1.5rem;
         transition: all .3s ease;
+
         .icon {
             fill: #F2F2F2;
         }
+
         &:hover {
             opacity: .6;
         }
+
         &--underline {
             text-decoration: underline;
             text-decoration-style: dashed;
         }
     }
+
     &__icon {
         height: $menuHeight;
         // line-height: $menuHeight;
         width: 16px;
         height: 16px;
         display: inline-block;
+
         &:last-child {
             margin-right: 5px;
         }
     }
+
     &__btn {
         display: none;
         position: absolute;
@@ -174,6 +283,50 @@
         font-size: 24px;
         font-weight: bold;
         z-index: 2;
+
+        @media (max-width: $sm - 1) {
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            width: 24px;
+            height: 15px;
+            z-index: 3;
+            order: 1;
+        }
+
+        span {
+            @media (max-width: $sm - 1) {
+                position: absolute;
+                background-color: #fff;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                top: 7px;
+            }
+        }
+
+        &::after,
+        &::before {
+            @media (max-width: $sm - 1) {
+                content: "";
+                background-color: #fff;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                left: 0;
+                top: 0;
+                transition: ease 0.1s 0.2s;
+            }
+        }
+
+        &::after {
+
+            @media (max-width: $sm - 1) {
+                top: auto;
+                bottom: 0;
+            }
+        }
     }
 }
 
@@ -181,6 +334,7 @@
     width: 32px;
     height: 32px;
     position: relative;
+
     &__count {
         font-family: 'OpenSans';
         font-size: 1rem;
