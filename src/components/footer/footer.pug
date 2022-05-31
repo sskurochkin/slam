@@ -4,37 +4,40 @@
 .footer 
 	.container 
 		nav.footer__menu
-			ul.footer__list 
-				li Каталог
-				li 
-					a(href='#').footer__link Акции
-				li 
-					a(href='#').footer__link Детям
-				li 
-					a(href='#').footer__link Подарки
-			ul.footer__list 
-				li Информация
-				li 
-					a(href='#').footer__link Доставка и оплата
-				li 
-					a(href='#').footer__link Программа лояльности
-				li 
-					a(href='#').footer__link О компании
-			ul.footer__list 
-				li Информация
-				li 
-					a(href='#').footer__link Доставка и оплата
-				li 
-					a(href='#').footer__link Программа лояльности
-				li 
-					a(href='#').footer__link О компании
+			+nav({
+				mod: 'footer__list',
+				list: [
+					{name: 'Каталог'},
+					{name: 'Акции'},
+					{name: 'Детям'},
+					{name: 'Подарки'},
+					]
+				})
+			+nav({
+				mod: 'footer__list',
+				list: [
+					{name: 'Информация'},
+					{name: 'Доставка и оплата'},
+					{name: 'Программа лояльности'},
+					{name: 'О компании'},
+					]
+				})
+			+nav({
+				mod: 'footer__list',
+				list: [
+					{name: 'Информация'},
+					{name: 'Доставка и оплата'},
+					{name: 'Программа лояльности'},
+					{	name: 'О компании'},
+					]
+				})
 			ul.footer__list 
 				li Контакты
 				li 
 					+icon('i-time')(style='width:24px; height:24px').footer__icon
 					a(href='#').footer__link Доставка и оплата
 				li 
-					+icon('i-phone-alt')(style='width:24px; height:24px').footer__icon
+					+icon('i-phone')(style='width:24px; height:24px').footer__icon
 					a(href='tel:+375173880082').footer__link +375 (17) 388-00-82
 				li 
 					+icon('i-mail')(style='width:20px; height:20px').footer__icon

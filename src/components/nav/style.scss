@@ -70,52 +70,6 @@
     }
 }
 
-.nav--footer {
-    .nav-list {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .nav-item {
-        margin-bottom: 20px;
-        position: relative;
-        &:after {
-            position: absolute;
-            content: '';
-            top: 100%;
-            left: 0;
-            right: 100%;
-            height: 1px;
-            background-color: $c-primary;
-            transition: all .3s ease;
-        }
-        &:hover {
-            @media (min-width: 1024px) {
-                cursor: pointer;
-                .nav-link {
-                    color: $c-primary;
-                }
-                &:after {
-                    right: 0;
-                }
-            }
-        }
-        &.active {
-            pointer-events: none;
-            .nav-link {
-                color: $c-primary;
-            }
-        }
-        @media (max-width: $sm - 1) {
-            margin-bottom: 12px;
-        }
-    }
-    @media (max-width: $sm - 1) {
-        padding-left: 25px;
-        margin-top: 16px;
-    }
-}
-
 .nav--mobile {
     .nav-list {
         display: flex;

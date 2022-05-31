@@ -53,11 +53,11 @@ mixin nav(args= {})
 							})
 
 						span.nav-item-name!= item.name
-						if(item.list || item.big_nav || item.list_hidden)
+						if (item || item.big_nav || item.list_hidden)
 							span.nav-toggle.js-nav-toggle
 								if (item.icon)
 									+icon(item.icon.name)(width= item.icon.width height= item.icon.height)
-					if(item.list || item.big_nav)
+					if (item.list || item.big_nav)
 						div.js-nav.nav-lvl2(id= item.ajax && item.ajax.target && item.ajax.target.replace('#', ''))
 							if (item.list)
 								ul.nav-lvl2-list
