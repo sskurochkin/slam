@@ -59,9 +59,14 @@
     }
     .nav-link{
         color: #fff;
+    transition: all .3s ease;
+
+    &:hover {
+        opacity: .6;
+    }
     }
 
-    &__link {
+    &__link, .nav-link {
         color: #fff;
         display: inline-block;
         transition: all .3s ease;

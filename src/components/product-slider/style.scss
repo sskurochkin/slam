@@ -46,11 +46,6 @@
 			margin        : -16px -12px;
 			margin-bottom : -24px;
 			z-index       : 10;
-
-			@media (max-width: $md - 1) {
-				// padding: 0px 0px;
-				// margin : 0px 0px;
-			}
 		}
 
 
@@ -128,16 +123,3 @@
 		}
 	}
 }
-
-// .product-slider-section-bg {
-// 	padding         : 52px 0px;
-// 	background-color: #FAFAFB;
-
-// 	@media (max-width: $md - 1) {
-// 		padding: 40px 0px;
-// 	}
-
-// 	@media (max-width: $sm - 1) {
-// 		padding: 25px 0px;
-// 	}
-// }
