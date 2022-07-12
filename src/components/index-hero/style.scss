@@ -2,10 +2,21 @@
 
 
 .swiper.slider-fs {
-	.swiper-slide {
-		display        : flex;
-		justify-content: center;
-		align-items    : center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         p {
             position: absolute;
             right: 0;
@@ -22,18 +33,20 @@
             color: #fff;
             display: flex;
             align-items: center;
+
             @media (max-width: $sm - 1) {
                 font-size: 40px;
             }
+
             span {
                 flex-basis: 100%;
                 text-align: center;
             }
         }
-	}
+    }
 
-	.swiper-button-next,
-	.swiper-button-prev {
+    .swiper-button-next,
+    .swiper-button-prev {
         position: absolute;
         background-color: transparent;
         border: none;
@@ -45,19 +58,42 @@
         cursor: pointer;
         margin: auto 0;
         transition: all .3s ease;
-        .icon{
+
+        .icon {
             fill: rgb(234, 234, 234);
-            &:hover{
+
+            &:hover {
                 fill: $second;
                 transform: scale(1.1);
             }
         }
-        
-	}
-	.swiper-button-next {
-		right: 50px;
-	}
-	.swiper-button-prev {
-		left: 50px;
-	}
+
+    }
+
+    .swiper-button-next {
+        right: 50px;
+    }
+
+    .swiper-button-prev {
+        left: 50px;
+    }
+
+
+}
+
+.index-hero {
+    &__inner {
+        display: grid;
+        grid-template-columns: 100%;
+
+    }
+
+    &__item--main {
+        grid-row: 1/3;
+    }
+
+    &__slider {
+        padding-bottom: 49.1%;
+        position: relative;
+    }
 }

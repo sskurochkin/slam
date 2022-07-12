@@ -14,20 +14,20 @@ window.addEventListener('load', function() {
         }, 100)
     })
 
-    const scrollHandler = () => {
-        if ($(window).scrollTop() > scrollTop && $(window).scrollTop() > headerTopHeight) {
-            document.querySelector(".js-header-sticky").classList.add("header-sticky--sticky");
-            document.querySelector(".header-sticky").classList.add("header-min");
-        } else {
-            document.querySelector(".header-sticky").classList.remove("header-min");
-        }
-        if ($(window).scrollTop() <= headerTopHeight) {
-            document.querySelector(".js-header-sticky").classList.remove("header-sticky--sticky");
-        }
-        scrollTop = $(window).scrollTop();
-    };
+    // const scrollHandler = () => {
+    //     if ($(window).scrollTop() > scrollTop && $(window).scrollTop() > headerTopHeight) {
+    //         document.querySelector(".js-header-sticky").classList.add("header-sticky--sticky");
+    //         document.querySelector(".header-sticky").classList.add("header-min");
+    //     } else {
+    //         document.querySelector(".header-sticky").classList.remove("header-min");
+    //     }
+    //     if ($(window).scrollTop() <= headerTopHeight) {
+    //         document.querySelector(".js-header-sticky").classList.remove("header-sticky--sticky");
+    //     }
+    //     scrollTop = $(window).scrollTop();
+    // };
 
-    window.addEventListener('scroll', scrollHandler);
+    // window.addEventListener('scroll', scrollHandler);
 
 
     $('.js-show-more-tags').click(function() {
@@ -38,9 +38,9 @@ window.addEventListener('load', function() {
         $('.header-mid__search').toggleClass('active');
     })
 
-    $('.header-search__input .form-control')[0].addEventListener('focus', function() {
-        $('.search-results').addClass('active');
-    })
+    // $('.header-search__input .form-control')[0].addEventListener('focus', function() {
+    //     $('.search-results').addClass('active');
+    // })
 
 
     $('.js-show-mini-basket').click(function(ev) {

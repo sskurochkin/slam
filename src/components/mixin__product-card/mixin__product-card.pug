@@ -19,21 +19,15 @@ mixin product-card(args={})
 							mod: 'stock__discount--rec',
 							content: 'Рекомендуем'
 						})
-				img(src=`https://picsum.photos/200` alt="").card__pic
+				+lazy-img({
+					img: 'https://picsum.photos/200',
+					placeholder: pixel,
+					http: 'https://picsum.photos/200',
+					img_mod: 'card__pic',
+				})
 				span.card__fav(class=args.favourites ? 'active' : '')
 						+icon('i-heart-card-3')(style="width:22px; height:22px")
 			.card__info
-				//- a(href="#").product-card__image
-				//- 	if (args.slider)
-				//- 		+lazy-img-slider({
-				//- 			img: args.img,
-				//- 			placeholder: pixel
-				//- 		})
-				//- 	else
-				//- 		+lazy-img({
-				//- 			img: args.img,
-				//- 			placeholder: pixel
-				//- 		})
 				if (args.availability == 'available')
 					+product-status({
 						mod: 'available',

@@ -8,15 +8,15 @@ header.header
 				span 
 				span 
 				span 
-			ul.menu__list 
-				li 
-					a(href='#').menu__link О компании
-				li 
-					a(href='#').menu__link Потребителям
-				li 
-					a(href='#').menu__link Магазины
-				li 
-					a(href='#').menu__link Контакты
+			+nav({
+				mod: 'menu__header',
+				list: [
+					{name: 'О компании', active: true,},
+					{name: 'Потребителям'},
+					{name: 'Магазины'},
+					{name: 'Контакты'},
+					]
+			})
 			ul.menu__list 
 				li 
 					a(href="mailto:info@info.com").menu__link

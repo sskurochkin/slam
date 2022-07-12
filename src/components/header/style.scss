@@ -195,14 +195,16 @@
         flex-direction: column;
         align-items: flex-start;
 
-        &:hover .menu__list {
+        &:hover .menu__list, 
+        &:hover .nav-list {
             display: block;
         }
     }
 
-    &__list {
+    &__list, .nav-list{
         display: flex;
         justify-content: start;
+            
 
         @media (max-width: $sm - 1) {
             position: relative;
@@ -239,9 +241,24 @@
         }
     }
 
-    &__link {
+    &__header {
+        .nav-list {
+
+            &:last-child {
+
+                li:first-child,
+                li:nth-child(2) {
+                    @media (max-width: $md - 1) {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+
+    &__link, .menu__header a {
         height: $menuHeight;
-        // line-height: $menuHeight;
         display: flex;
         align-items: center;
         color: #fff;
@@ -251,7 +268,7 @@
 
         .icon {
             fill: #fff;
-            margin-right: 2px;        
+            margin-right: 2px;
         }
 
         &:hover {
